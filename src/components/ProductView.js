@@ -1,11 +1,7 @@
-import { Component } from 'react';
+import React from 'react';
 
-class ProductView extends Component {
-    render() {
-        return (
-            <h2>This is </h2>
-        );
-    }
-}
+const ProductView = (props) => (
+    <h2>This is Product Number {props.match.params.productId}</h2>
+);
   
 export default ProductView;
