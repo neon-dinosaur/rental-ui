@@ -1,21 +1,25 @@
-import React from 'react';
+import React from 'react'
 
-class Navigation extends React.Component{
-    reder(){
-        return(
-            <div class="mainNavigation">
-                <ul class="navUL">
-                    <li class="navItem">Home</li>
-                    <li class="navItem">About</li>
-                    <li class="navItem">Rentals</li>
-                    <li class="navItem">Lessons</li>
-                    <li class="navItem">Beach Cam</li>
-                    <li class="navItem">Cart</li>
-                </ul>
-            </div>
-        )
-    }
-
+const Navigation = () => {
+    const menuItems = [
+        'Home',
+        'About',
+        'Rentals',
+        'Lessons',
+        'Beach Cam',
+        'Cart'
+    ]
+    return (
+        <div className="mainNavigation" >
+            <ul className="navUL">
+                {
+                    menuItems.map(
+                        (menuItem, index) => <li key={index}>{menuItem}</li>
+                    )
+                }
+            </ul>
+        </div>
+    )
 }
 
-export default Navigation;
+export default Navigation
