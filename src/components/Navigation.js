@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Navigation = () => {
     const menuItems = [
@@ -8,7 +8,7 @@ const Navigation = () => {
         'Lessons',
         'Beach Cam',
         'Cart'
-    ]
+    ];
     return (
         <div className="mainNavigation" >
             <ul className="navUL">
@@ -19,7 +19,7 @@ const Navigation = () => {
                 }
             </ul>
         </div>
-    )
-}
+    );
+};
 
-export default Navigation
+export default Navigation;
