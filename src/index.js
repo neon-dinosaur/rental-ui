@@ -12,6 +12,6 @@ const Root = () => (
     <BrowserRouter>
         <App />
     </BrowserRouter>
-)
+);
 
 render(<Root />, document.getElementById('root'));
