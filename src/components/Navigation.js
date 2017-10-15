@@ -11,27 +11,51 @@ const menuItems = [
 ];
 
 class Navigation extends Component {
-    isActive(menuItem) {
-        return (menuItem === this.props.activePage) ? 'active' : '';
+    static propTypes = {
+        activePage: PropTypes.string.isRequired
     }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            activePage: props.activePage
+        }
+    }
+
+    isActive(menuItem) {
+        return (menuItem === this.state.activePage) ? 'active' : '';
+    }
+
+    onClick = (e) => (
+        this.setState({ activePage: e.currentTarget.text })
+    )
 
     render() {
         return (
-            <div className="navigation">
-                <ul>
-                    {
-                        menuItems.map(
-                            (menuItem, index) => <li className={`menu-item ${this.isActive(menuItem)}`} key={index}>{menuItem}</li>
-                        )
-                    }
-                </ul>
-            </div>
+            <header className="navigation navbar">
+                <section className="navbar-section">
+                    <h2 className="logo">
+                        <i className="icon icon-photo"></i>
+                        Ocean Rentals
+                    </h2>
+                </section>
+                <section className="navbar-section">
+                    <ul>
+                        {
+                            menuItems.map(
+                                (menuItem, index) => <a key={index}
+                                    className={`menu-item btn btn-link ${this.isActive(menuItem)}`}
+                                    onClick={this.onClick}
+                                >
+                                    {menuItem}
+                                </a>
+                            )
+                        }
+                    </ul>
+                </section>
+            </header>
         );
     }
 }
-
-Navigation.PropTypes = {
-    activePage: PropTypes.number
-};
 
 export default Navigation;
