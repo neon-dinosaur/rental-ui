@@ -15,7 +15,7 @@ const HomeView = () => (
                 </p>
             </div>
         </div>
-    </div >
+    </div>
 );
 
 export default HomeView;
