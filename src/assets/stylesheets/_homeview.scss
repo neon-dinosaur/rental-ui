@@ -1,11 +1,13 @@
 .homeview {
     height: 750px;
-    background: lightgrey url("assets/images/stock_images/blackphoto.jpg") no-repeat center;
+    background: $gray-color-light url("assets/images/stock_images/blackphoto.jpg") no-repeat center;
 
     .homeview-content {
+        color: $primary-color;
         margin-top: 60px;
-        padding: 10px;
-        background-color: $bg-color;
+        padding: 15px;
+        background-color: $gray-color-light;
+        opacity: 0.8;
         border-radius: 15px;
     }
 }
